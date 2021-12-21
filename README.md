@@ -4,6 +4,7 @@ Small library for calculating and experimenting with optical properties of condu
 
 ## available models
 - Drude-Lorentz
+- Brendel-Bormann
 
 ## available data
 
