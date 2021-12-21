@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 setup(name="goodasgold",
-      version="0.1",
+      version="0.1.1",
       description="Collection of routines for calculating Optical Properties of Conductors",
       author="Francisco Orlandini",
       author_email='francisco.orlandini@gmail.com',
