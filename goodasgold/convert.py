@@ -1,4 +1,4 @@
-from math import sqrt
+import numpy as np
 
 
 def um_to_thz(wl: float):
@@ -63,7 +63,7 @@ def nk_from_er(er1: float, er2: float):
     er2: float
         imaginary part of relative permittivity
     """
-    delta = sqrt(er1**2+er2**2)
-    n = sqrt((delta+er1)/2)
-    k = sqrt((delta-er1)/2)
+    delta = np.sqrt(er1**2+er2**2)
+    n = np.sqrt((delta+er1)/2)
+    k = np.sqrt((delta-er1)/2)
     return [n, k]
