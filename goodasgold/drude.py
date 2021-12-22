@@ -26,15 +26,11 @@ def drude_lorentz(wl: float, w_p: float, f_0: float, g_0: float,
 
     """
 
-    contribs = []
     # intraband contribution
-    contribs.append((lambda w, f0=f_0, wp=w_p,
-                     g0=g_0: 1 - f0*wp*wp/(w*(w - 1j * g0)))(wl))
+    epsilon = 1 - f_0*w_p*w_p/(wl*(wl - 1j * g_0))
 
     # interband contributions
-    [contribs.append(
-        (lambda w, wp=w_p, fi=f_i, gi=g_i, wi=w_i: (fi * wp * wp) /
-         (wi ** 2 - w ** 2 + w * gi * 1j))(wl))
-     for[f_i, g_i, w_i] in bound_electron_params]
+    for[f_i, g_i, w_i] in bound_electron_params:
+        epsilon += (f_i * w_p * w_p) / (w_i ** 2 - wl ** 2 + wl * g_i * 1j)
 
-    return sum(contribs)
+    return epsilon
