@@ -1,4 +1,3 @@
-from scipy.constants import speed_of_light
 from math import sqrt
 
 
@@ -15,7 +14,7 @@ def um_to_thz(wl: float):
         wavelength
 
     """
-    return speed_of_light/(wl * 10**6)
+    return 299.793458/wl  # speed of light/10**6
 
 
 def thz_to_ev(freq: float):
