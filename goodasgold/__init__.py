@@ -1,2 +1,2 @@
-from .models.rakic98 import au_dl
-from .convert import nk_from_er
+from .models.rakic98 import au_dl, au_bb
+from .convert import er_to_nk

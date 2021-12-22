@@ -47,10 +47,27 @@ def um_to_ev(wl: float):
         wavelength (um)
 
     """
-    return thz_to_ev(um_to_thz(wl))
+    return 1.2398454729297688/wl
 
 
-def nk_from_er(er1: float, er2: float):
+def ev_to_um(wl: float):
+    """
+    Converts from wavelength (um)
+    to electronvolts (eV)
+
+
+
+
+    Parameters
+    ----------
+    wl: float
+        wavelength (um)
+
+    """
+    return wl/1.2398454729297688
+
+
+def er_to_nk(er1: float, er2: float):
     """
     Calculates the refractive index based on the relative permittivity
     The refractive index is given by n - jk
